@@ -11,10 +11,10 @@ function App() {
 
   return (
     <>
-<Navbar/>
-<Search/>
+      <Navbar />
+      <Search />
 
-<MovieContainer/>
+      <MovieContainer />
     </>
   )
 }

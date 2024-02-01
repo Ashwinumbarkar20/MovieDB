@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { Button, TextField, Grid, Paper } from '@mui/material';
 import { MovieDBApp } from '../../Context';
+import './Search.css'
 export default function Search() {
-    const{startDate,setEndDate,endDate, setStartDate,handleSearch}=useContext(MovieDBApp)
+    const{startDate,setEndDate,endDate, setStartDate,handleSearch,error,setError}=useContext(MovieDBApp)
   return (
     <>
       <Paper elevation={3} style={{ padding: 20, margin: 20 }}>
@@ -42,6 +43,12 @@ export default function Search() {
           </Button>
         </Grid>
       </Grid>
+      {error && (
+        <div className='error-div'>
+          <p>No data found for mentioned range</p>
+          <Button variant='outlined' onClick={() => {setError(false); setStartDate(""); setEndDate("")}}>Dismiss</Button>
+        </div>
+      )}
     </Paper>
     </>
   )

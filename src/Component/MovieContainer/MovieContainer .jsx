@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import movieimg from '../../assets/movie.jpg'
+import {Link} from 'react-router-dom'
+import './MovieContainer.css'
 import {
   Container,
   Grid,
@@ -21,6 +23,7 @@ const MovieContainer = () => {
         {movies.map((movie) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={movie.id}>
             <Paper elevation={3}>
+              <Link target="_blank" className="Link" to={movie.homepage}>
               <Card>
                 <CardMedia
                   component="img"
@@ -40,6 +43,7 @@ const MovieContainer = () => {
                   </Typography>
                 </CardContent>
               </Card>
+              </Link>
             </Paper>
           </Grid>
         ))}

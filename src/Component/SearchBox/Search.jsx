@@ -43,6 +43,7 @@ export default function Search() {
                         </Button>
                     </Grid>
                 </Grid>
+                <p style={{color:'#0336FF',margin:"10px"}}><span style={{fontWeight:"bolder"}}> Important Note:-</span> Date Range should be a range no longer than 14 days</p>
                 {error && (
                     <div className='error-div'>
                         <p>No data found for mentioned range</p>

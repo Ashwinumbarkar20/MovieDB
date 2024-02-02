@@ -14,7 +14,6 @@ import {
 import { MovieDBApp } from '../../Context';
 
 
-
 const MovieContainer = () => {
     const { movies } = useContext(MovieDBApp)
     return (
@@ -35,9 +34,9 @@ const MovieContainer = () => {
                                         <Typography align='center' variant="h6" component="div">
                                             {movie.title}
                                         </Typography>
-                                        <Typography align='center' variant="body2" color="text.secondary">
+                                        {/* <Typography align='center' variant="body2" color="text.secondary">
                                             {`${(movie.overview).substr(0, 30)}`}
-                                        </Typography>
+                                        </Typography> */}
                                         <Typography align='center' variant="body2" color="text.secondary">
                                             Release Date: {movie.release_date}
                                         </Typography>

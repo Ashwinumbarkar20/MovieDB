@@ -41,26 +41,26 @@ const MovieDBprovider = ({ children }) => {
     };
 
     useEffect(() => {
-        const fetchMovies = async () => {
-            try {
-                const res = await fetch(
-                    `https://api.themoviedb.org/3/movie/changes?page=1&api_key=${import.meta.env.VITE_API_KEY}`
-                );
-                const data = await res.json();
-                const pureids = data.results.map((ids) => ids.id);
-                const moviedetails = await Promise.all(
-                    pureids.map((id) =>
-                        fetch(
-                            `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_API_KEY}`
-                        ).then((res) => res.json())
-                    )
-                );
-                setMovies(moviedetails);
-            } catch (e) {
-                console.log(e);
-            }
-        };
-        fetchMovies();
+        // const fetchMovies = async () => {
+        //     try {
+        //         const res = await fetch(
+        //             `https://api.themoviedb.org/3/movie/changes?page=1&api_key=${import.meta.env.VITE_API_KEY}`
+        //         );
+        //         const data = await res.json();
+        //         const pureids = data.results.map((ids) => ids.id);
+        //         const moviedetails = await Promise.all(
+        //             pureids.map((id) =>
+        //                 fetch(
+        //                     `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_API_KEY}`
+        //                 ).then((res) => res.json())
+        //             )
+        //         );
+        //         setMovies(moviedetails);
+        //     } catch (e) {
+        //         console.log(e);
+        //     }
+        // };
+        // fetchMovies();
     }, []);
 
     return (

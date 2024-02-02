@@ -17,8 +17,10 @@ import { MovieDBApp } from '../../Context';
 const MovieContainer = () => {
     const { movies } = useContext(MovieDBApp)
     return (
+        
         <Container>
-            <Grid container spacing={3}>
+        <div style={{display:"flex",justifyContent:"end"}}><p style={{marginBottom:"10px"}}>Total Movies:- {movies.length}</p></div>
+        {movies? <Grid container spacing={3}>
                 {movies.map((movie) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={movie.id}>
                         <Paper elevation={3}>
@@ -46,7 +48,8 @@ const MovieContainer = () => {
                         </Paper>
                     </Grid>
                 ))}
-            </Grid>
+            </Grid>:"Loading..."}
+           
         </Container>
     );
 };

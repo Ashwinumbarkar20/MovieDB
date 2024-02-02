@@ -39,7 +39,7 @@ export default function Search() {
                             onClick={handleSearch}
                             fullWidth
                         >
-                            Search
+                            Search Movies
                         </Button>
                     </Grid>
                 </Grid>
